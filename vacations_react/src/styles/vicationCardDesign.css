@@ -1,0 +1,34 @@
+.like{
+  outline: none !important;
+}
+.share{
+  outline: none !important;
+}
+.more{
+  outline: none !important;
+}
+
+.favoriteOn{
+  color:red;
+}
+
+.favoriteOn:hover{
+  color:rgb(117,117,117);
+}
+
+
+.favoriteOff:hover{
+  color: red;
+}
+
+@media (max-width:430px){
+  .myCard{
+    margin-left: 22px !important;
+  }
+}
+
+@media (max-width:376px){
+  .myCard{
+    margin-left: 0px !important;
+  }
+}

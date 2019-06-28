@@ -1,0 +1,146 @@
+
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+.mybody{
+    height: 100vh !important;
+    width: 100vw !important;
+}
+.container{
+height: 100%;
+margin-left: 15%;
+margin-top: 10px;
+align-content: center;
+}
+
+.card{
+color: #f2f8fd;
+height: 370px;
+margin-top: auto;
+margin-bottom: auto;
+width: 400px;
+background-color: rgba(89, 124, 134, 0.3) !important;
+}
+
+.social_icon span{
+font-size: 60px;
+margin-left: 10px;
+color: #f2f8fd;
+}
+
+.social_icon span:hover{
+color: white;
+cursor: pointer;
+}
+
+.card-header h3{
+color: white;
+}
+
+.social_icon{
+position: absolute;
+right: 20px;
+top: -45px;
+}
+
+.input-group-prepend span{
+width: 40px;
+background-color: #f2f8fd;
+color: #303132;
+border:0 !important;
+}
+
+.btn:focus{
+outline: 0 0 0 0  !important;
+box-shadow: 0 0 0 0 !important;
+
+}
+
+.remember{
+color: white;
+}
+
+.remember input
+{
+width: 20px;
+height: 20px;
+margin-left: 15px;
+margin-right: 5px;
+}
+
+
+
+.links{
+color: white;
+}
+
+.links a{
+margin-left: 4px;
+}
+
+.link{
+    color: #17a2b8;
+}
+
+.btn{
+    position: absolute;
+    top:62%;
+    left: 10px;
+    width:330px;
+}
+
+.signup{
+    left: 0px !important;
+    width:310px !important;
+}
+
+@media (max-width:1025px){
+    .btn{
+        width:320px; 
+    }
+}
+@media (max-width:769px){
+    .btn{
+        width:365px; 
+    }
+    .container{
+        margin-left: 5%;
+    }
+    .signup{
+        width:350px !important;
+    }
+}
+@media (max-width:426px){
+    .btn{
+        width:300px; 
+    }
+    .container{
+        margin-left: 5%;
+    }
+    .signup{
+        width:290px !important;
+    }
+}
+
+@media (max-width:376px){
+    .btn{
+        width:290px; 
+    }
+    .container{
+        margin-left: 10%;
+    }
+    .signup{
+        width:265px !important;
+    }
+}
+
+@media (max-width:321px){
+    .btn{
+        width:240px; 
+    }
+    .container{
+        margin-left: 5%;
+    }
+    .signup{
+        width:225px !important;
+    }
+}

@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Numans');
+::-webkit-scrollbar { 
+    display: none; 
+}
+body{
+    display: flex;
+    height: 100vh !important;
+}
+.mymainbody{
+    height: 100% !important;
+    width: 100% !important;
+}
+
+
+.saveModal{
+    position: relative !important;
+    top: 10px !important;
+    left: 0% !important;
+    width: 800px !important;
+}
