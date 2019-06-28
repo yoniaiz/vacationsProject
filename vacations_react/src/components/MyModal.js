@@ -1,6 +1,5 @@
 import React from 'react'
 import Input from './input'
-import CountrySelector from './CountrySelector'
 import {ModalInput} from '../Jsons/ModelInputs'
 
 import {Button , Modal} from 'react-bootstrap'

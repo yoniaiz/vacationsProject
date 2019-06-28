@@ -102,4 +102,13 @@ app.get('/clear', function (req, res) {
 
 })
 
+
+app.get('/getVacationChart', async (req, res) => {
+    let vacations = await vicationsHandler.getVacationChart();
+    res.send(vacations)
+
+})
+
+
+
 app.listen(port);

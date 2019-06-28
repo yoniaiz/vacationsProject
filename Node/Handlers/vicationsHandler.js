@@ -62,6 +62,35 @@ module.exports.addVic = async(vic) => {
     return vications;
 }
 
+module.exports.getVacationChart = async () => {
+    let vacations = await usersVacationSql.joinTabels(table)
+    let vacationsChart = []; 
+    for (let i = 0; i < vacations.length; i++) {
+        if(!findInArray(vacationsChart,vacations[i])){
+            vacationsChart.push({name:vacations[i].location,num:howManyInArray(vacations,vacations[i].location)})
+        }
+    }
+    console.log(vacationsChart)
+    return vacationsChart;
+}
+findInArray = (arr,obj) => {
+    if(arr.length == 0) return false;
+    for (let i = 0; i < arr.length; i++) {
+        if(obj.location === arr[i].name)
+            return true; 
+    }
+    return false
+} 
+
+howManyInArray = (arr,name) => {
+    let counter = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if(name === arr[i].location)
+            counter++;
+    }
+    return counter;
+}
+
 manipulateDate = (str) =>{
     str.split(' ')
     newStr =[]

@@ -7,7 +7,7 @@ const navbar = (props) => {
     return (
         <header className="header p-0">
             <h1 className="logo"><a href="#"><Clock></Clock></a></h1>
-            <h1 className="logo" style={admin}><a href="#">Chart</a></h1>
+            <h1 className="logo" style={admin}><a href="#"><Link className='p-0 m-0' to="/chart">Chart </Link></a></h1>
         <ul className="main-nav">
                <li style={admin}>
                     <a href="#" className='name'> Admin </a> 

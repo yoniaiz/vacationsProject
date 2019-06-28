@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import Registration from './pages/Registration'
+import Main from './pages/MainPage'
+import Chart from './pages/Chart'
 import {BrowserRouter, Route} from 'react-router-dom';
 import axios from 'axios'
-import Main from './pages/MainPage'
+
 
 class App extends Component {
 
@@ -19,6 +21,7 @@ class App extends Component {
             <BrowserRouter>
                 <Route path='/' exact component={Main}/>
                 <Route path='/registration/:login' component={Registration}/>
+                <Route path='/chart' component={Chart}/>
             </BrowserRouter>
         //  <BrowserRouter>
         // {(this.state.check==='1'||localStorage.getItem('user'))?<Main></Main>:<Registr

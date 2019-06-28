@@ -74,6 +74,8 @@ class sqlCommander {
             })
         })
     }
+
+
     async delete(param, id) {
         let con = createConnection(this.database)
         let sql = `DELETE FROM ${this.table} WHERE ${param} = ${id}`
@@ -94,15 +96,26 @@ class sqlCommander {
             })
         })
     }
-    async joinTabels(secondTable, ThirdTable) {
+    async joinTabels(secondTable) {
         let con = createConnection(this.database)
-        let sql = `SELECT ${ThirdTable}.id AS UserId , 
-        ${secondTable}.id,
-        ${this.table}.uId
-        FROM ${ThirdTable} JOIN  ${this.table}
-        ON ${ThirdTable}.id = ${this.table}.uId
-        JOIN ${this.table} ON ${secondTable}.id = ${this.table}.id
-        `
+        let sql = `SELECT users_vacation.vacationId, 
+                   vacation.location
+                   FROM users_vacation 
+                   JOIN vacation 
+                   ON 
+                   users_vacation.vacationId = vacation.id
+                                                            `
+        return new Promise((resolve, reject) => {
+            con.query(sql, async (err, result) => {
+                if (err) throw err;
+                resolve(result);
+            })
+        })
+    }
+
+    async howMany(param){
+        let con = createConnection(this.database)
+        let sql = `SELECT SUM(IF(vacationId=${param},1,0)) FROM ${this.table}`
         return new Promise((resolve, reject) => {
             con.query(sql, async (err, result) => {
                 if (err) throw err;

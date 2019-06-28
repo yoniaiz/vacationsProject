@@ -10,10 +10,9 @@ import {User} from '../User'
 
 import '../styles/login.css'
 import {Background} from "../styles/Background.js"
+
 class Registration extends Component {
-
   User = new User();
-
   state = {
       path:'',
       user : {},

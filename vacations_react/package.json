@@ -25,7 +25,8 @@
     "react-scripts": "2.1.8",
     "react-select": "^3.0.4",
     "react-select-country-list": "^2.0.1",
-    "reactstrap": "^8.0.0"
+    "reactstrap": "^8.0.0",
+    "recharts": "^1.6.2"
   },
   "scripts": {
     "start": "react-scripts start",
