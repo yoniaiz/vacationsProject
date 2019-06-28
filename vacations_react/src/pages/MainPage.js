@@ -5,23 +5,18 @@ import CardV from "../components/CardV";
 import { Redirect } from "react-router-dom";
 import AddButton from '../components/AddButton'
 
+import {User} from '../User'
+
 import "../styles/mainPageStyle.css" ;
 import {Background} from "../styles/Background.js"
 
 
 import MyModal from '../components/MyModal'
 class MainPage extends Component {
-  User = {
-    first_name: "",
-    last_name: "",
-    password: "",
-    mail: "",
-    role: 0,
-  };
 
   state = {
     vications: [],
-    user: this.User,
+    user: new User(),
     userStr:'',
     redirect : false,
     modal: null
@@ -38,7 +33,6 @@ class MainPage extends Component {
   componentDidMount = async () => {
     let log = await axios.get(`http://localhost:8080/rememberd`,this.options);
     let user;
-    console.log(JSON.parse(localStorage.getItem('user')))
     if (log.data.remembrd === '1' || log.data.session || localStorage.getItem('user') ) {      
       if(log.data.remembrd === '1'){
         user = JSON.parse(log.data.user)[0]
@@ -71,7 +65,6 @@ class MainPage extends Component {
 
   likeVication = async (id) =>{
     this.options.params.vicationId = id;
-
     let answer = await axios.get(`http://localhost:8080/likedVic`,this.options);
     if(answer){
       this.getCards();
@@ -80,9 +73,9 @@ class MainPage extends Component {
   }
 
   showModal = async(card) => {
-    console.log(card)
    await this.setState({modal:<MyModal card = {{...card}}  hide = {this.hideModal} show = {true}></MyModal>})
   }
+
   hideModal = async(card) => {
     await this.setState({modal:<MyModal card = {{}} hide = {this.hideModal} show = {false}></MyModal>})
     await this.setState({modal:null})
@@ -128,7 +121,7 @@ class MainPage extends Component {
     }
       
   }
-
+////////////////////
   displayCards = (vacations , liked) => {
     let admin = (String(this.state.user.role) === '2')? true:false; //admin cards or regular to create
     let vicationCards = vacations.map(vacation => {
@@ -160,7 +153,7 @@ class MainPage extends Component {
       }
     return false
   }
-
+// //////////////////
   logout = () => {
     const options = {
       params: {

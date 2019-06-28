@@ -5,19 +5,18 @@ import Alert from '../components/Alert'
 import axios from 'axios'
 import Main from './MainPage'
 import { Redirect } from "react-router-dom";
+
+import {User} from '../User'
+
 import '../styles/login.css'
 import {Background} from "../styles/Background.js"
 class Registration extends Component {
-  User = {
-    first_name:'',
-    last_name:'',
-    password:'',
-    mail:'',
-    role:0
-  }
+
+  User = new User();
+
   state = {
       path:'',
-      user : this.User,
+      user : {},
       massage:'',
       showMassage:[],
       check:false,
@@ -27,8 +26,8 @@ class Registration extends Component {
 
   componentDidMount = () => {
     if(this.props.match.params.login === 'true')
-     return <Login check={this.check} getName={this.getName} getPassword = {this.getPassword} submit={this.loginUser}/>
-     return <SignUp getName={this.getName} getPassword = {this.getPassword} getLastName = {this.getLastName} getMail={this.getMail} submit={this.submitUser}/>
+      return <Login check={this.check} getName={this.getName} getPassword = {this.getPassword} submit={this.loginUser}/>
+    return <SignUp getName={this.getName} getPassword = {this.getPassword} getLastName = {this.getLastName} getMail={this.getMail} submit={this.submitUser}/>
   }
 
   getName = async (name) => {
@@ -67,7 +66,6 @@ class Registration extends Component {
   submitUser = async () => {
     await this.setState({user : this.User})
     let massage = '';
-    console.log(this.state.user)
     massage = (!this.checkInputs())? 'Not all fields enreted. ' : '';
     massage += (!this.checkMailInput())? 'Mail unvalid.' : '';
     await this.setState({massage})
@@ -99,7 +97,6 @@ class Registration extends Component {
 
   check = async () => {
     await this.setState({check:(this.state.check)? false:true}) 
-    console.log(this.state.check)
   }
 
   openLogin = () => {
@@ -156,8 +153,6 @@ login = async () => {
         
 }
   render() {
-    
-    console.log(this.props.match.params.login)
     if (this.state.redirect) {
       return <Redirect to='/'/>;
    }
