@@ -1,34 +1,60 @@
-.like{
-  outline: none !important;
-}
-.share{
-  outline: none !important;
-}
-.more{
+.like {
   outline: none !important;
 }
 
-.favoriteOn{
-  color:red;
+.share {
+  outline: none !important;
 }
 
-.favoriteOn:hover{
-  color:rgb(117,117,117);
+.more {
+  outline: none !important;
 }
 
-
-.favoriteOff:hover{
+.favoriteOn {
   color: red;
 }
 
-@media (max-width:430px){
-  .myCard{
-    margin-left: 22px !important;
+.favoriteOn:hover {
+  color: rgb(117, 117, 117);
+}
+
+
+.favoriteOff:hover {
+  color: red;
+}
+
+@media (max-width:767px) {
+  .myCard {
+    position: relative;
+    left: 25%;
   }
 }
 
-@media (max-width:376px){
-  .myCard{
-    margin-left: 0px !important;
+@media (max-width:650px) {
+  .myCard {
+    position: relative;
+    left: 20%;
+  }
+}
+
+
+@media (max-width:580px) {
+  .myCard {
+    position: relative;
+    left: 15%;
+  }
+}
+
+@media (max-width:490px) {
+  .myCard {
+    position: relative;
+    left: 5%;
+  }
+}
+
+@media (max-width:490px) {
+  .myCard {
+    position: relative;
+    left: 0%;
   }
 }
