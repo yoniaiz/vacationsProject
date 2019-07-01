@@ -87,11 +87,11 @@ app.get("/loginUser", async (req, res) => {
     req.session.user = user;
   }
   res.send(
-    answer.exist
-      ? answer.role == 2
-        ? "found-admin"
-        : "found"
-      : "User not found"
+    answer.exist ?
+    answer.role == 2 ?
+    "found-admin" :
+    "found" :
+    "User not found"
   );
 });
 app.get("/insertUser", async (req, res) => {
@@ -152,7 +152,7 @@ app.get("/addVic", async (req, res) => {
   res.send(added);
 });
 
-app.get("/clear", function(req, res) {
+app.get("/clear", function (req, res) {
   res.clearCookie("remember-me", "1");
   res.clearCookie("user", req.query.user);
   req.session.destroy();
