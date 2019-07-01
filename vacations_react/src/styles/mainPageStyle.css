@@ -35,5 +35,8 @@ body {
 }
 
 @media (max-width: 767px) {
-    
+    .cardCon{
+        position: relative;
+        top: 150px;
+    }
 }

@@ -82,7 +82,15 @@ class MainPage extends Component {
 
   showModal = async card => {
     await this.setState({
-      modal: <MyModal card={{ ...card }} hide={this.hideModal} show={true} />
+      modal: (
+        <MyModal
+          card={{
+            ...card
+          }}
+          hide={this.hideModal}
+          show={true}
+        />
+      )
     });
   };
 
@@ -220,15 +228,19 @@ class MainPage extends Component {
     return (
       <div
         className="container-fluid m-0 p-0"
-        style={{ height: "100% !important", width: "100vw" }}
+        style={{
+          height: "100% !important",
+          width: "100vw"
+        }}
       >
         <div className="mymainbody p-0 m-0" style={background}>
           <Navbar
             name={this.state.user.first_name}
             logout={this.logout}
             admin={String(this.state.user.role) === "2" ? true : false}
+            add={this.addCard}
           />
-          <div className="container-fluid ">
+          <div className="container-fluid cardCon" >
             <div className="offset-xl-1 offset-lg-0 row  mt-5">
               {this.state.vications}
             </div>
