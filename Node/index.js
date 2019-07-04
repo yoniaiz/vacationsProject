@@ -1,7 +1,7 @@
 const http = require("http");
 const socketIO = require("socket.io");
 const express = require("express");
-
+const path = require("path");
 const vicationsHandler = require("./Handlers/vicationsHandler");
 const loginHandler = require("./Handlers/loginHandler");
 
@@ -29,7 +29,7 @@ app.use(
     resave: false
   })
 );
-
+app.use(express.static(path.join(__dirname, "cliend/build")));
 // our server instance
 const server = http.createServer(app);
 
@@ -162,4 +162,8 @@ app.get("/clear", function(req, res) {
 app.get("/getVacationChart", async (req, res) => {
   let vacations = await vicationsHandler.getVacationChart();
   res.send(vacations);
+});
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "/client/build/index.html"));
 });
