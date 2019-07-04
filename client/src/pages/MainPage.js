@@ -10,7 +10,7 @@ import AddButton from "../components/AddButton";
 import { User, host } from "../User";
 
 import "../styles/mainPageStyle.css";
-import { Background } from "../styles/Background.js.js";
+import { Background } from "../styles/Background.js";
 
 import MyModal from "../components/MyModal";
 class MainPage extends Component {
@@ -240,7 +240,7 @@ class MainPage extends Component {
             admin={String(this.state.user.role) === "2" ? true : false}
             add={this.addCard}
           />
-          <div className="container-fluid cardCon" >
+          <div className="container-fluid cardCon">
             <div className="offset-xl-1 offset-lg-0 row  mt-5">
               {this.state.vications}
             </div>

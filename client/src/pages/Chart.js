@@ -14,7 +14,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 import "../styles/mainPageStyle.css";
-import { Background } from "../styles/Background.js.js";
+import { Background } from "../styles/Background.js";
 
 class Chart extends Component {
   state = {
