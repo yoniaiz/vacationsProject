@@ -7,4 +7,4 @@ export class User {
     this.role = role ? role : 0;
   }
 }
-export const host = "http://localhost:8080";
+export const host = "https://historic-glacier-bay-28734.herokuapp.com";

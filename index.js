@@ -18,7 +18,7 @@ var corsOptions = {
   allowedHeaders: ["sessionId", "Content-Type"],
   exposedHeaders: ["sessionId"],
   credentials: true,
-  origin: ["http://localhost:3000"] // here goes Frontend IP
+  origin: ["*"] // here goes Frontend IP
 };
 app.use(cookieParser());
 app.use(cors(corsOptions));
