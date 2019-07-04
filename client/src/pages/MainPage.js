@@ -10,7 +10,7 @@ import AddButton from "../components/AddButton";
 import { User, host } from "../User";
 
 import "../styles/mainPageStyle.css";
-import { Background } from "../styles/Background.js";
+import { Background } from "../styles/Background.js.js";
 
 import MyModal from "../components/MyModal";
 class MainPage extends Component {

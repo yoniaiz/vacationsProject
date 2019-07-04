@@ -9,7 +9,7 @@ import { Redirect } from "react-router-dom";
 import { User, host } from "../User";
 
 import "../styles/login.css";
-import { Background } from "../styles/Background.js";
+import { Background } from "../styles/Background.js.js";
 
 class Registration extends Component {
   User = new User();

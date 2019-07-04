@@ -1,15 +1,15 @@
 const http = require("http");
-const socketIO = require("socket.io");
-const express = require("express");
+const socketIO = require("./node_modules/socket.io/lib");
+const express = require("./node_modules/express");
 const path = require("path");
 const vicationsHandler = require("./Handlers/vicationsHandler");
 const loginHandler = require("./Handlers/loginHandler");
 
-const cors = require("cors");
+const cors = require("./node_modules/cors/lib");
 var app = express();
-var cookieParser = require("cookie-parser");
-var session = require("express-session");
-var bodyParser = require("body-parser");
+var cookieParser = require("./node_modules/cookie-parser");
+var session = require("./node_modules/express-session");
+var bodyParser = require("./node_modules/body-parser");
 
 const port = process.env.PORT || 8080;
 
@@ -29,7 +29,10 @@ app.use(
     resave: false
   })
 );
-app.use(express.static(path.join(__dirname, "cliend/build")));
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "cliend/build")));
+}
 // our server instance
 const server = http.createServer(app);
 
@@ -59,8 +62,6 @@ io.on("connection", socket => {
 
 // `socket` is the server side of the socket
 server.listen(port, () => console.log(`Listening on port ${port}`));
-
-// /const client = require('socket.io-client')('http://localhost:' + port);
 
 app.get("/getVacations", async (req, res) => {
   let vications = await vicationsHandler.getAll();
